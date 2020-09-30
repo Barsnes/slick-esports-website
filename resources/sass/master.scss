@@ -1,0 +1,21 @@
+@import '_variables';
+@import '_imports';
+@import 'default';
+@import 'index';
+
+@import 'gretaros';
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: $dark-blue;
+
+  font-family: "Poppins"
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Gretaros";
+  color: $white;
+  margin: 0;
+}

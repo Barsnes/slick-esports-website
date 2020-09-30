@@ -1,0 +1,87 @@
+.header {
+  background: $yellow;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 80px;
+
+  & .nav-logo {
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+
+    & a {
+      max-height: 100%;
+
+      & img {
+        height: 60px;
+      }
+    }
+  }
+
+  & nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 3rem;
+
+    & ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+
+      & li {
+        margin-left: 1.5rem;
+
+        & a {
+          padding: .5rem;
+          font-weight: bold;
+          color: $dark-blue;
+          text-decoration: none;
+          font-weight: 600;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 4px solid $yellow;
+  padding: 2rem 3rem;
+  margin-top: 10rem;
+
+  & img {
+    max-width: 30%;
+  }
+
+  & ul {
+    list-style: none;
+
+    & li {
+      color: $white;
+
+      &.list-title {
+        font-family: "Gretaros";
+        color: $yellow;
+      }
+
+      & a {
+        text-decoration: none;
+        color: $white;
+
+        transition: color 150ms ease;
+
+        &:hover {
+          color: $yellow
+        }
+      }
+    }
+  }
+}
