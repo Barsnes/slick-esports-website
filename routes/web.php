@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Fortify;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\NewsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', [PagesController::class, 'index']);
+Route::get('/news', [PagesController::class, 'news']);
+Route::get('/news/{slug}', [PagesController::class, 'getSingleNews'])->name('article.single');
+
+Fortify::loginView(function () {
+    return view('auth.login');
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function() {
+
+  Route::resource('/dashboard/news', NewsController::class);
+
 });

@@ -14,7 +14,8 @@
       max-height: 100%;
 
       & img {
-        height: 60px;
+        max-height: 60px;
+        display: block;
       }
     }
   }

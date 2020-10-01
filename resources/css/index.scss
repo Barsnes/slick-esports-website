@@ -59,6 +59,7 @@
 
       & img {
         max-width: 100%;
+        display: block;
       }
 
       & a {
@@ -90,16 +91,15 @@
       position: relative;
       width: 100%;
       height: 300px;
+      display: grid;
       margin: auto;
 
       & .players {
         width: 100%;
         height: 100%;
+        margin: auto;
         display: flex;
         justify-content: center;
-        z-index: 2;
-        position: absolute;
-        bottom: 0;
 
         & .player {
           width: 20%;
@@ -107,7 +107,7 @@
           position: relative;
 
           & img {
-            max-width: 80%;
+            max-width: 100%;
             display: block;
             width: auto;
             height: auto;

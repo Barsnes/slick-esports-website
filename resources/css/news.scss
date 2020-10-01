@@ -1,0 +1,66 @@
+.news {
+  display: grid;
+  width: 100%;
+
+  &-content {
+    width: 70%;
+    margin: auto;
+    padding-top: 2rem;
+
+    & .news-section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+
+      & .article {
+        width: 100%;
+
+        & img {
+          max-width: 100%;
+        }
+
+        &:nth-of-type(1) {
+          grid-column: 1 / 3;
+          grid-row: 1 / 3;
+        }
+
+      }
+    }
+  }
+
+  &-single {
+    width: 70%;
+    margin: auto;
+    padding-top: 2rem;
+    display: grid;
+
+    & img {
+      width: 100%;
+      margin: auto;
+    }
+
+    & h1 {
+      margin: 1rem 0 .2rem 0;
+    }
+
+    & h5 {
+      font-family: Poppins;
+      color: $yellow;
+    }
+
+    & hr {
+      width: 100%;
+    }
+
+    & .body {
+      display: grid;
+      color: $white;
+
+      & img {
+        width: 60%;
+        height: auto;
+      }
+    }
+
+  }
+}

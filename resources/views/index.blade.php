@@ -18,11 +18,9 @@
       <span class="extra">X</span>
     </div>
     <div class="news-content">
-      <a href="#"><img src="/assets/news-default.png" /></a>
-      <a href="#"><img src="/assets/news-default.png" /></a>
-      <a href="#"><img src="/assets/news-default.png" /></a>
-      <a href="#"><img src="/assets/news-default.png" /></a>
-      <a href="#"><img src="/assets/news-default.png" /></a>
+      @foreach ($news as $article)
+        <a href={{ '/news/' . $article->slug }}><img src={{ '/images/' . $article->image }} /></a>
+      @endforeach
     </div>
   </div>
 
