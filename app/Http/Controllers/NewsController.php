@@ -80,7 +80,7 @@ class NewsController extends Controller
         $article->save();
 
         // Redirect
-        return redirect()->route('article.single', [$article->slug]);
+        return redirect()->route('news.single', [$article->slug]);
     }
 
     /**
@@ -102,7 +102,9 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+      $news = News::where('id', '=', $id)->first();
+
+      return view('dashboard.news.edit')->withNews($news);
     }
 
     /**
@@ -114,7 +116,44 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      // Validate data
+      $this->validate($request, array(
+          'title' => 'required|min:5',
+          'author' => 'required|min:5',
+          'image' => 'image',
+          'team_id' => '',
+          'body' => 'required',
+        ));
+
+        $article = News::find($id);
+
+        $article->title = $request->title;
+        $article->author = $request->author;
+        if ($request->team_id == 'null') {
+          $article->team_id = '';
+        } else {
+          $article->team_id = $request->team_id;
+        }
+        $article->body = $request->body;
+
+        $value = $article->title;
+        $article->slug = Str::slug($value);
+
+        if ($request->hasFile('image')) {
+          $image = $request->file('image');
+          $info = getimagesize($image);
+          $extension = image_type_to_extension($info[2]);
+          $filename = time() . $extension;
+          $location = public_path('images/' . $filename);
+          Image::make($image)->resize(1200, 600)->save($location);
+
+          $article->image = $filename;
+        }
+
+        $article->save();
+
+        // Redirect
+        return redirect()->route('news.single', [$article->slug]);
     }
 
     /**
@@ -125,6 +164,8 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        News::find($id)->delete();
+
+        return redirect()->route('dashboard.news');
     }
 }

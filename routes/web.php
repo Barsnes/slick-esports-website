@@ -19,7 +19,7 @@ use App\Http\Controllers\NewsController;
 
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/news', [PagesController::class, 'news']);
-Route::get('/news/{slug}', [PagesController::class, 'getSingleNews'])->name('article.single');
+Route::get('/news/{slug}', [PagesController::class, 'getSingleNews'])->name('news.single');
 
 Fortify::loginView(function () {
     return view('auth.login');

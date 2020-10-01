@@ -17,7 +17,7 @@
                 <div class="px-4 py-5 bg-white sm:p-6">
                   <h6 class="text-sm">{{ date('d M Y', strtotime($article->created_at)) }}</h6>
                   <h3 class="text-xl font-bold mb-4">{{ $article->title }}</h3>
-                  <a href={{ "/dashboard/news/edit/" . $article->id }} class="inline-flex items-center px-4 py-2 bg-blue-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
+                  <a href={{ "/dashboard/news/" . $article->id . "/edit"}} class="inline-flex items-center px-4 py-2 bg-blue-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
                     Edit
                   </a>
                 </div>
