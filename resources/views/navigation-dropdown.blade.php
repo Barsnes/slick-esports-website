@@ -15,8 +15,17 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/dashboard/news" :active="request()->routeIs('dashboard/news')">
+                    <x-jet-nav-link href="/dashboard/about" :active="request()->routeIs('about.index')">
+                        {{ __('About') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="/dashboard/news" :active="request()->routeIs('news.index')">
                         {{ __('News') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="/dashboard/teams" :active="request()->routeIs('teams.index')">
+                        {{ __('Teams') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="/dashboard/players" :active="request()->routeIs('players.index')">
+                        {{ __('Players') }}
                     </x-jet-nav-link>
                 </div>
             </div>

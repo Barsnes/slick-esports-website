@@ -1,0 +1,51 @@
+.teams {
+
+  &-section {
+    padding-top: 3rem;
+
+    & .team-single {
+      text-align: center;
+      padding-bottom: 6rem;
+
+      & h1 {
+        font-size: 4rem;
+      }
+
+      & .team-content {
+        margin-top: 1rem;
+      }
+
+      &:nth-of-type(2n) {
+        padding-top: 2rem;
+        background-color: $yellow;
+
+        & h1 {
+          color: $dark-blue
+        }
+
+        & .extra {
+          color: $white;
+        }
+
+        & .player-info {
+          & h5 {
+            color: $dark-blue
+          }
+        }
+      }
+
+      & h1 {
+
+      }
+
+      & .extra {
+        color: $yellow;
+        font-family: "Lato";
+        font-weight: 900;
+      }
+
+    }
+
+  }
+
+}

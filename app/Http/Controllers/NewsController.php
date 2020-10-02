@@ -166,6 +166,6 @@ class NewsController extends Controller
     {
         News::find($id)->delete();
 
-        return redirect()->route('dashboard.news');
+        return redirect()->route('news.index');
     }
 }

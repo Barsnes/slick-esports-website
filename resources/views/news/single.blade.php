@@ -10,10 +10,9 @@
 
     <img src="{{ asset('images/' . $news->image) }}" />
     <h1>{{ $news->title }}</h1>
-    <h5 class="text-sm">Written by {{ $news->author }} on {{ date('d M Y', strtotime($news->created_at)) }}</h5>
-    <hr>
     <div class="body">
       {!! $news->body !!}
+      <h5>#BESLICK</h5>
     </div>
 
   </div>
