@@ -26,7 +26,7 @@
 
   <div class="index-team">
     <div class="index-title">
-      <h2>@if($team->name) {{ $team->name }} @endif</h2>
+      <h2>@if($team) {{ $team->name }} @endif</h2>
       <span class="extra">X</span>
     </div>
 
