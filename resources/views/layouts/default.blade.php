@@ -41,15 +41,15 @@
 
   <ul>
     <li class="list-title">Socials</li>
-    <li><a href="#">Twitter</a></li>
-    <li><a href="#">Twitch</a></li>
-    <li><a href="#">Facebook</a></li>
-    <li><a href="#">YouTube</a></li>
+    <li><a href="https://twitter.com/SlickEU" target="_blank">Twitter</a></li>
+    <li><a href="#" target="_blank">Twitch</a></li>
+    <li><a href="#" target="_blank">Facebook</a></li>
+    <li><a href="#" target="_blank">YouTube</a></li>
   </ul>
 
   <ul>
     <li class="list-title">Contact</li>
-    <li>Email: contact@slick.be</li>
+    <li>Email: info@slickesports.be</li>
   </ul>
 
 </div>

@@ -40,7 +40,7 @@ class PagesController extends Controller
     }
 
     public function teams() {
-      $teams = Teams::get();
+      $teams = Teams::where('active', '=', 1)->get();
 
       return view('teams')->withTeams($teams);
     }

@@ -68,7 +68,7 @@ class TeamsController extends Controller
       $teams = Teams::get();
 
       // Redirect
-      return redirect()->route('dashboard.teams');
+      return redirect()->route('teams.index');
     }
 
     public function destroy($id)

@@ -214,7 +214,7 @@
 }
 
 .team-content .players {
-  width: 100%;
+  max-width: 1300px;
   height: 100%;
   margin: auto;
   display: flex;
