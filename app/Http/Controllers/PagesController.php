@@ -22,29 +22,33 @@ class PagesController extends Controller
 
     public function about() {
       $about = About::find(1);
+      $sponsors = Sponsors::get();
 
-      return view('about')->withAbout($about);
+      return view('about')->withAbout($about)->withSponsors($sponsors);
     }
 
     public function news() {
       $news = News::get();
+      $sponsors = Sponsors::get();
 
-      return view('news.index')->withNews($news);
+      return view('news.index')->withNews($news)->withSponsors($sponsors);
     }
 
     public function getSingleNews($slug) {
 
       // $article = Article::where('created_at', '=', $year)->get();
       $news = News::where('slug', '=', $slug)->first();
+      $sponsors = Sponsors::get();
 
-      return view('news.single')->withNews($news);
+      return view('news.single')->withNews($news)->withSponsors($sponsors);
 
     }
 
     public function teams() {
       $teams = Teams::where('active', '=', 1)->get();
+      $sponsors = Sponsors::get();
 
-      return view('teams')->withTeams($teams);
+      return view('teams')->withTeams($teams)->withSponsors($sponsors);
     }
 
 }
