@@ -21,7 +21,8 @@
     position: relative;
 
     & img {
-      margin-top: -15rem;
+      margin-top: 5%;
+      transform: translateY(-50%);
       width: 60%;
     }
 
