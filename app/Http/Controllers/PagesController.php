@@ -51,4 +51,10 @@ class PagesController extends Controller
       return view('teams')->withTeams($teams)->withSponsors($sponsors);
     }
 
+    public function sponsors() {
+      $sponsors = Sponsors::get();
+
+      return view('sponsors')->withSponsors($sponsors);
+    }
+
 }

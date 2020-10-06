@@ -1,0 +1,60 @@
+.sponsors {
+
+  &-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem;
+
+    & h1  {
+      font-size: 4rem;
+    }
+
+    & .extra {
+      max-width: 15px;
+    }
+  }
+
+  &-content {
+    min-height: calc(100vh - 8rem);
+    display: grid;
+    padding: 4rem 0;
+    color: $white;
+
+    & .sponsor-single {
+      width: 60%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 3rem;
+      margin: auto;
+      margin-top: 0;
+
+      & img {
+        max-height: 100px;
+        max-width: 80%;
+        margin: auto;
+      }
+
+      & h5 {
+        font-size: 2rem;
+      }
+
+      & a {
+        color: $yellow;
+      }
+
+      &:nth-of-type(2n) {
+        & img {
+          grid-column: 2 / 3;
+          grid-row: 1 / 2;
+        }
+
+        & .sponsor-single-info {
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+        }
+      }
+    }
+  }
+}

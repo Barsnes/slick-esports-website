@@ -26,7 +26,8 @@ class SponsorsController extends Controller
         $this->validate($request, array(
             'name' => 'required|min:2|max:255',
             'url' => 'required|url',
-            'image' => 'required|image'
+            'image' => 'required|image',
+            'body' => ''
         ));
 
         // Store in DB
@@ -34,6 +35,7 @@ class SponsorsController extends Controller
 
         $sponsor->name = $request->name;
         $sponsor->url = $request->url;
+        $sponsor->body = $request->body;
 
         $image = $request->file('image');
         $info = getimagesize($image);
@@ -68,7 +70,8 @@ class SponsorsController extends Controller
       $this->validate($request, array(
           'name' => 'required|min:2|max:255',
           'url' => 'required|url',
-          'image' => 'image'
+          'image' => 'image',
+          'body' => ''
         ));
 
         // Store in DB
@@ -76,6 +79,7 @@ class SponsorsController extends Controller
 
         $sponsor->name = $request->name;
         $sponsor->url = $request->url;
+        $sponsor->body = $request->body;
 
         if($image = $request->file('image')) {
           $image = $request->file('image');

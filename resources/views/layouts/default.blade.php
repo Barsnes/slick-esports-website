@@ -50,7 +50,7 @@
 
   <div class="footer-bottom">
     @foreach ($sponsors as $sponsor)
-      <a href={{ $sponsor->url }}><img src={{ asset('images/' . $sponsor->image) }} /></a>
+      <a href={{ $sponsor->url }} target="_blank"><img src={{ asset('images/' . $sponsor->image) }} /></a>
     @endforeach
   </div>
 

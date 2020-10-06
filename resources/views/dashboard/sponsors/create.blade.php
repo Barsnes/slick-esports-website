@@ -1,4 +1,10 @@
 <x-app-layout>
+  <script src="https://cdn.tiny.cloud/1/yt4c5s5px656mcfoeugpsdwuzv0ptqo62r4o394melqwn44x/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    tinymce.init({ selector:'textarea',
+    plugins:'image link autolink code advlist imagetools spellchecker media', automatic_uploads: true, menubar: true,
+    });
+  </script>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Create new team') }}
@@ -24,6 +30,11 @@
               <div class="mt-4">
                   <x-jet-label value="{{ __('Image') }}" />
                   <x-jet-input class="block mt-1 w-full" type="file" name="image" />
+              </div>
+
+              <div class="mt-4">
+                  <x-jet-label value="{{ __('Text') }}" />
+                  <textarea class="block mt-1 h-full w-full p-5" type="text" name="body" style="min-height: 30rem" ></textarea>
               </div>
 
               <div class="flex items-center justify-end mt-4">

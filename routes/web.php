@@ -25,6 +25,7 @@ Route::get('/about', [PagesController::class, 'about']);
 Route::get('/news', [PagesController::class, 'news']);
 Route::get('/news/{slug}', [PagesController::class, 'getSingleNews'])->name('news.single');
 Route::get('/teams', [PagesController::class, 'teams']);
+Route::get('/sponsors', [PagesController::class, 'sponsors']);
 
 Fortify::loginView(function () {
     return view('auth.login');
