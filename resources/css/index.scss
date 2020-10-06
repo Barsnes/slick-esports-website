@@ -6,35 +6,28 @@
     font-size: 4rem;
   }
 
-  & .extra {
-    color: $yellow;
-    font-family: "Lato";
-    font-weight: 900;
+  & img {
+    max-width: 15px;
   }
 }
 
 .index {
 
   &-header {
-    height: 75vh;
+    height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 
-    & h1 {
-      font-size: 10rem;
-      margin-top: -5rem;
-      margin-left: 2rem;
-
-      & span {
-        letter-spacing: 5rem;
-      }
+    & img {
+      margin-top: -15rem;
+      width: 60%;
     }
 
     & .index-button {
       position: absolute;
-      top: 32.5rem;
+      top: 80%;
       left: 50%;
       transform: translateX(-50%);
 
@@ -48,6 +41,8 @@
 
   &-news {
     text-align: center;
+    height: calc(100vh - 8rem);
+    padding: 4rem 0;
 
     & .news-content {
       width: 70%;
@@ -83,15 +78,17 @@
   }
 
   &-team {
-    margin-top: 4rem;
+    height: calc(100vh - 8rem);
+    padding: 4rem 0;
     display: grid;
     grid-gap: 2rem;
+    grid-template-rows: 150px auto;
   }
 
   &-story {
     display: grid;
-    margin-top: 7rem;
-    margin-bottom: 7rem;
+    height: calc(100vh - 8rem);
+    padding: 4rem 0;
 
     & .about-section {
       width: 70%;
@@ -108,7 +105,7 @@
 
       & .content {
         & p {
-          color: $white;
+          color: $dark-blue;
         }
 
         & h6 {
@@ -123,7 +120,7 @@
 .team-content {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 100%;
   display: grid;
   margin: auto;
 
@@ -136,6 +133,7 @@
 
     & .player {
       width: 20%;
+      height: 100%;
       display: grid;
       position: relative;
 
@@ -152,7 +150,7 @@
       &-info {
         padding-bottom: 1rem;
         text-align: center;
-        transform: translateY(20px);
+        transform: translateY(0);
         opacity: 0;
         transition: all .15s;
 
@@ -166,7 +164,7 @@
       }
 
       &:hover .player-info {
-        transform: translateY(0);
+        transform: translateY(-60px);
         opacity: 1;
         transition: all .15s;
       }

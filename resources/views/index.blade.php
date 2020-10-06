@@ -4,18 +4,18 @@
 
 @section('content')
 
-  <div class="index-header">
-    <h1><span>SLIC</span>K</h1>
+  <div class="index-header bg-dark">
+    <img src="{{ asset('/assets/SLICKESPORTS.svg') }}" />
 
     <a class="index-button" href="#news">
       v
     </a>
   </div>
 
-  <div id="news" class="index-news">
+  <div id="news" class="index-news bg-white">
     <div class="index-title">
       <h2>NEWS</h2>
-      <span class="extra">X</span>
+      <img src={{ asset('/assets/x.svg') }} class"extra" />
     </div>
     <div class="news-content">
       @foreach ($news as $article)
@@ -24,10 +24,10 @@
     </div>
   </div>
 
-  <div class="index-team">
+  <div class="index-team bg-dark">
     <div class="index-title">
       <h2>@if($team) {{ $team->name }} @endif</h2>
-      <span class="extra">X</span>
+      <img src={{ asset('/assets/x.svg') }} class"extra" />
     </div>
 
     <div class="team-content">
@@ -47,21 +47,21 @@
         @endforeach
       </div>
     </div>
+  </div>
 
-    <div class="index-story">
-      <div class="index-title">
-        <h2>OUR STORY</h2>
-        <span class="extra">X</span>
-      </div>
+  <div class="index-story bg-white">
+    <div class="index-title">
+      <h2>OUR STORY</h2>
+      <img src={{ asset('/assets/x.svg') }} class"extra" />
+    </div>
 
-      <div class="about-section">
-        <img src="assets/about-image.png" />
-        <div class="content">
-          <p>
-            {!! $about->index_story !!}
-          </p>
-          <h6>#BESLICK</h6>
-        </div>
+    <div class="about-section">
+      <img src="assets/about-image.png" />
+      <div class="content">
+        <p>
+          {!! $about->index_story !!}
+        </p>
+        <h6>#BESLICK</h6>
       </div>
     </div>
   </div>

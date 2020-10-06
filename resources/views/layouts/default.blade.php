@@ -16,41 +16,43 @@
 
 </head>
 <body>
-<div class="header">
+<div class="header {{ (Request::is('/') ? 'index' : '') }}">
     <div class="nav-logo">
-      <a href="/"><img src="/assets/dark-logo.png" alt="Slick Esports logo"></a>
+      <a href="/"><img src="{{ (Request::is('/') ? '/assets/dark-logo.png' : '/assets/white-logo.png') }}" alt="Slick Esports logo"></a>
     </div>
     <nav class="navbar">
       <ul class="navlist">
-        <li><a class="{{ (Request::is('about') || Request::is('about/*') ? 'onSite' : '') }}" href="/about">About</a></li>
-        <li><a class="{{ (Request::is('news') || Request::is('news/*') ? 'onSite' : '') }}" href="/news">News</a></li>
-        <li><a class="{{ (Request::is('teams') || Request::is('team/*') ? 'onSite' : '') }}" href="/teams">Teams</a></li>
-        <li><a class="{{ (Request::is('teams') || Request::is('team/*') ? 'onSite' : '') }}" href="/teams">Contact</a></li>
-        <li><a class="{{ (Request::is('sponsors')) }}" href="/sponsors">Sponsors</a></li>
+        <li><a class="{{ (Request::is('about') || Request::is('about/*') ? 'active' : '') }}" href="/about">About</a></li>
+        <li><a class="{{ (Request::is('news') || Request::is('news/*') ? 'active' : '') }}" href="/news">News</a></li>
+        <li><a class="{{ (Request::is('teams') || Request::is('team/*') ? 'active' : '') }}" href="/teams">Teams</a></li>
+        <li><a class="{{ (Request::is('sponsors' ? 'active' : '')) }}" href="/sponsors">Sponsors</a></li>
       </ul>
     </nav>
 </div>
 
 @yield('content')
 
-<div class="footer">
+<div class="footer bg-dark">
 
-  <div class="footer--left">
+  <div class="footer-top">
+    <div class="footer-top-left">
+      <a href="https://twitter.com/SlickEU" target="_blank">Twitter</a>
+      <a href="#" target="_blank">Twitch</a>
+      <a href="#" target="_blank">Instagram</a>
+    </div>
+
     <img src="/assets/white-logo.png" />
+
+    <div class="footer-top-right">
+      <a href="mailto:info@slickesports.be">info@slickesports.be</a>
+    </div>
   </div>
 
-  <ul>
-    <li class="list-title">Socials</li>
-    <li><a href="https://twitter.com/SlickEU" target="_blank">Twitter</a></li>
-    <li><a href="#" target="_blank">Twitch</a></li>
-    <li><a href="#" target="_blank">Facebook</a></li>
-    <li><a href="#" target="_blank">YouTube</a></li>
-  </ul>
-
-  <ul>
-    <li class="list-title">Contact</li>
-    <li>Email: info@slickesports.be</li>
-  </ul>
+  <div class="footer-bottom">
+    @foreach ($sponsors as $sponsor)
+      <a href={{ $sponsor->url }}><img src={{ asset('images/' . $sponsor->image) }} /></a>
+    @endforeach
+  </div>
 
 </div>
 

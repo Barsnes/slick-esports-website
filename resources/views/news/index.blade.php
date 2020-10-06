@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="news">
+<div class="news bg-white">
 
   <div class="news-content">
 

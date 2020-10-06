@@ -1,11 +1,19 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;
 
 200;300;400;500;600;700;800;900&display=swap);.header {
-  background: #FAB900;
+  background: #080818;
   height: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 80px;
+}
+
+.header.index {
+  background-color: #FFFFFF;
+}
+
+.header.index a {
+  color: #080818;
 }
 
 .header .nav-logo {
@@ -44,7 +52,7 @@
 .header nav ul li a {
   padding: 0.5rem;
   font-weight: bold;
-  color: #080818;
+  color: #FFFFFF;
   text-decoration: none;
   font-weight: 600;
 }
@@ -53,38 +61,71 @@
   text-decoration: underline;
 }
 
+.header nav ul li a.active {
+  text-decoration: underline;
+}
+
 .footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4rem;
   border-top: 4px solid #FAB900;
-  padding: 2rem 3rem;
+  padding: 4rem 3rem;
 }
 
-.footer img {
-  max-width: 30%;
+.footer-top {
+  max-width: 75%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-gap: 4rem;
 }
 
-.footer ul {
-  list-style: none;
+.footer-top img {
+  max-width: 35%;
+  margin: auto;
 }
 
-.footer ul li {
-  color: #FFFFFF;
+.footer-top-left {
+  margin: auto;
+  margin-right: 0;
+  display: flex;
 }
 
-.footer ul li.list-title {
-  font-family: "Gretaros";
-  color: #FAB900;
+.footer-top-left a {
+  margin-left: 2rem;
 }
 
-.footer ul li a {
+.footer-top-right {
+  margin: auto;
+  margin-left: 0;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.footer-top a {
   text-decoration: none;
   color: #FFFFFF;
   transition: color 150ms ease;
 }
 
-.footer ul li a:hover {
+.footer-top a:hover {
   color: #FAB900;
+}
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+.footer-bottom a {
+  display: grid;
+}
+
+.footer-bottom a img {
+  max-height: 60px;
+  max-width: 80%;
+  margin: auto;
 }
 
 .index-title {
@@ -96,33 +137,26 @@
   font-size: 4rem;
 }
 
-.index-title .extra {
-  color: #FAB900;
-  font-family: "Lato";
-  font-weight: 900;
+.index-title img {
+  max-width: 15px;
 }
 
 .index-header {
-  height: 75vh;
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-.index-header h1 {
-  font-size: 10rem;
-  margin-top: -5rem;
-  margin-left: 2rem;
-}
-
-.index-header h1 span {
-  letter-spacing: 5rem;
+.index-header img {
+  margin-top: -15rem;
+  width: 60%;
 }
 
 .index-header .index-button {
   position: absolute;
-  top: 32.5rem;
+  top: 80%;
   left: 50%;
   transform: translateX(-50%);
   color: #FAB900;
@@ -134,6 +168,8 @@
 
 .index-news {
   text-align: center;
+  height: calc(100vh - 8rem);
+  padding: 4rem 0;
 }
 
 .index-news .news-content {
@@ -171,15 +207,17 @@
 }
 
 .index-team {
-  margin-top: 4rem;
+  height: calc(100vh - 8rem);
+  padding: 4rem 0;
   display: grid;
   grid-gap: 2rem;
+  grid-template-rows: 150px auto;
 }
 
 .index-story {
   display: grid;
-  margin-top: 7rem;
-  margin-bottom: 7rem;
+  height: calc(100vh - 8rem);
+  padding: 4rem 0;
 }
 
 .index-story .about-section {
@@ -197,7 +235,7 @@
 }
 
 .index-story .about-section .content p {
-  color: #FFFFFF;
+  color: #080818;
 }
 
 .index-story .about-section .content h6 {
@@ -208,7 +246,7 @@
 .team-content {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 100%;
   display: grid;
   margin: auto;
 }
@@ -223,6 +261,7 @@
 
 .team-content .players .player {
   width: 20%;
+  height: 100%;
   display: grid;
   position: relative;
 }
@@ -240,7 +279,7 @@
 .team-content .players .player-info {
   padding-bottom: 1rem;
   text-align: center;
-  transform: translateY(20px);
+  transform: translateY(0);
   opacity: 0;
   transition: all 0.15s;
 }
@@ -254,7 +293,7 @@
 }
 
 .team-content .players .player:hover .player-info {
-  transform: translateY(0);
+  transform: translateY(-60px);
   opacity: 1;
   transition: all 0.15s;
 }
@@ -303,60 +342,54 @@
   transform: scale(0.8);
 }
 
-.about-top {
+.about {
+  height: calc(100vh - 8rem);
+  padding: 4rem 0;
   display: grid;
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.about-top img {
-  margin: auto;
-  max-width: 120px;
-}
-
-.about-top h1 {
-  margin-top: 1.5rem;
-}
-
-.about-content {
-  display: grid;
-  background-color: #FAB900;
-  color: #080818;
   padding: 1.5rem 0;
   grid-template-columns: 1fr;
 }
 
-.about-content .extra {
-  color: #FFFFFF;
-  font-family: "Lato";
-  font-weight: 900;
-  font-size: 2rem;
-  margin: auto;
+.about-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.about-content .body {
+.about-top h1 {
+  color: #080818;
+  font-size: 4rem;
+}
+
+.about-top .extra {
+  max-width: 15px;
+}
+
+.about .body {
   width: 50%;
   margin: auto;
 }
 
-.about-content .body p {
+.about .body p {
   margin: 1rem 0;
 }
 
-.about-content .body h5 {
+.about .body h5 {
   font-size: 1.8rem;
 }
 
 .news {
   display: grid;
   width: 100%;
-  margin-bottom: 7rem;
+  min-height: 100vh;
+  padding: 4rem 0;
 }
 
 .news-content {
   width: 70%;
   margin: auto;
-  padding-top: 2rem;
+  margin-top: 0;
 }
 
 .news-content .news-section {
@@ -371,6 +404,7 @@
 
 .news-content .news-section .article img {
   max-width: 100%;
+  display: block;
 }
 
 .news-content .news-section .article:nth-of-type(1) {
@@ -416,13 +450,10 @@
   height: auto;
 }
 
-.teams-section {
-  padding-top: 3rem;
-}
-
 .teams-section .team-single {
   text-align: center;
-  padding-bottom: 6rem;
+  height: calc(100vh - 8rem);
+  padding: 4rem 0;
 }
 
 .teams-section .team-single h1 {
@@ -431,29 +462,11 @@
 
 .teams-section .team-single .team-content {
   margin-top: 1rem;
-}
-
-.teams-section .team-single:nth-of-type(2n) {
-  padding-top: 2rem;
-  background-color: #FAB900;
-}
-
-.teams-section .team-single:nth-of-type(2n) h1 {
-  color: #080818;
-}
-
-.teams-section .team-single:nth-of-type(2n) .extra {
-  color: #FFFFFF;
-}
-
-.teams-section .team-single:nth-of-type(2n) .player-info h5 {
-  color: #080818;
+  max-height: 80%;
 }
 
 .teams-section .team-single .extra {
-  color: #FAB900;
-  font-family: "Lato";
-  font-weight: 900;
+  max-width: 15px;
 }
 
 @font-face {
@@ -481,5 +494,47 @@ h6 {
   font-family: "Gretaros";
   color: #FFFFFF;
   margin: 0;
+}
+
+.bg-dark {
+  background-image: url("/assets/background-dark.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+}
+
+.bg-dark h1 {
+  color: #FFFFFF;
+}
+
+.bg-dark h2 {
+  color: #FFFFFF;
+}
+
+.bg-dark .player-info h6 {
+  color: #FFFFFF;
+}
+
+.bg-white {
+  background-image: url("/assets/background-white.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+}
+
+.bg-white h1 {
+  color: #080818;
+}
+
+.bg-white h2 {
+  color: #080818;
+}
+
+.bg-white .player-info h6 {
+  color: #080818;
 }
 

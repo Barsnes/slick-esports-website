@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\About;
 use App\Models\Teams;
+use App\Models\Sponsors;
 
 class PagesController extends Controller
 {
@@ -14,8 +15,9 @@ class PagesController extends Controller
       $news = News::get()->reverse()->take(5);
       $about = About::find(1);
       $team = Teams::where('highlight', '=', 1)->first();
+      $sponsors = Sponsors::get();
 
-      return view('index')->withNews($news)->withAbout($about)->withTeam($team);
+      return view('index')->withNews($news)->withAbout($about)->withTeam($team)->withSponsors($sponsors);
     }
 
     public function about() {

@@ -4,22 +4,18 @@
 
 @section('content')
 
-<div class="about">
+<div class="about bg-white">
 
-  <div class="about-top">
-    <img src="/assets/white-logo.png" />
-    <h1>About Slick</h1>
-  </div>
-
-  <div class="about-content">
-    <span class="extra">X</span>
+    <div class="about-top">
+      <h1>About Us</h1>
+      <img src={{ asset('assets/x.svg') }} class="extra" />
+    </div>
 
     <div class="body">
       {!! $about->body !!}
       <h5>#BESLICK</h5>
     </div>
 
-  </div>
 
 </div>
 

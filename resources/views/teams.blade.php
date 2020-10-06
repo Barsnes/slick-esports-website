@@ -7,10 +7,18 @@
 <div class="teams">
 
     <div class="teams-section">
+      @php
+        $count = 0;
+      @endphp
       @foreach ($teams->reverse() as $team)
-        <div class="team-single">
+        <div class="team-single
+        @if ($count % 2 === 0)
+          bg-white
+        @else
+          bg-dark
+        @endif">
           <h1>{{ $team->name }}</h1>
-          <span class="extra">X</span>
+          <img src={{ asset('assets/x.svg') }} class="extra" />
           <div class="team-content">
             <div class="players">
               @foreach ($team->players as $player)
@@ -29,6 +37,9 @@
             </div>
           </div>
         </div>
+        @php
+          $count++
+        @endphp
       @endforeach
     </div>
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\PlayersController;
+use App\Http\Controllers\SponsorsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
   Route::resource('/dashboard/news', NewsController::class);
   Route::resource('/dashboard/teams', TeamsController::class);
   Route::resource('/dashboard/players', PlayersController::class);
+  Route::resource('/dashboard/sponsors', SponsorsController::class);
   Route::put('/dashboard/teams/{team}/highlight', [TeamsController::class, 'highlight'])->name('teams.highlight');
 
 });
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/register', function () {
+    return redirect('/dashboard');
+})->name('register');
