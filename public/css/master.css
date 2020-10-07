@@ -25,7 +25,13 @@
 .header .nav-logo {
   display: flex;
   align-items: center;
-  padding-left: 1rem;
+  padding-left: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .header .nav-logo {
+    padding-left: 1rem;
+  }
 }
 
 .header .nav-logo a {
@@ -721,8 +727,14 @@
 }
 
 .teams-section .team-single .team-content {
-  margin-top: 1rem;
+  margin-top: 8rem;
   max-height: 80%;
+}
+
+@media screen and (max-width: 600px) {
+  .teams-section .team-single .team-content {
+    margin-top: 2rem;
+  }
 }
 
 .teams-section .team-single .extra {

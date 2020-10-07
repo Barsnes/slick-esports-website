@@ -16,8 +16,12 @@
       }
 
       & .team-content {
-        margin-top: 1rem;
+        margin-top: 8rem;
         max-height: 80%;
+
+        @media screen and (max-width: 600px) {
+          margin-top: 2rem
+        }
       }
 
       & h1 {
