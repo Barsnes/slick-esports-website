@@ -37,11 +37,6 @@
                   </div>
                 </div>
 
-                <div class="mt-4">
-                    <x-jet-label value="{{ __('Text') }}" />
-                    <textarea class="block mt-1 h-full w-full p-5" type="text" name="body" style="min-height: 30rem" >{!! $sponsor->body !!}</textarea>
-                </div>
-
                 <div class="flex items-center justify-end mt-4">
                   <x-jet-button class="ml-4">
                       {{ __('Update') }}

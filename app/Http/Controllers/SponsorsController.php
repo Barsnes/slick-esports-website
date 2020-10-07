@@ -26,8 +26,7 @@ class SponsorsController extends Controller
         $this->validate($request, array(
             'name' => 'required|min:2|max:255',
             'url' => 'required|url',
-            'image' => 'required|image',
-            'body' => ''
+            'image' => 'required|image'
         ));
 
         // Store in DB
@@ -70,8 +69,7 @@ class SponsorsController extends Controller
       $this->validate($request, array(
           'name' => 'required|min:2|max:255',
           'url' => 'required|url',
-          'image' => 'image',
-          'body' => ''
+          'image' => 'image'
         ));
 
         // Store in DB

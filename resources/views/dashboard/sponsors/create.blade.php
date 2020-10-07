@@ -32,13 +32,7 @@
                   <x-jet-input class="block mt-1 w-full" type="file" name="image" />
               </div>
 
-              <div class="mt-4">
-                  <x-jet-label value="{{ __('Text') }}" />
-                  <textarea class="block mt-1 h-full w-full p-5" type="text" name="body" style="min-height: 30rem" ></textarea>
-              </div>
-
               <div class="flex items-center justify-end mt-4">
-
                   <x-jet-button class="ml-4">
                       {{ __('Create') }}
                   </x-jet-button>
