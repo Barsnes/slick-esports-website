@@ -4,11 +4,15 @@
 
     & .team-single {
       text-align: center;
-      height: calc(100vh - 8rem);
+      min-height: calc(100vh - 8rem);
       padding: 4rem 0;
 
       & h1 {
         font-size: 4rem;
+
+        @media screen and (max-width: 600px) {
+          font-size: 2rem
+        }
       }
 
       & .team-content {

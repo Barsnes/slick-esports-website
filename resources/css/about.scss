@@ -1,5 +1,5 @@
 .about {
-  height: calc(100vh - 8rem);
+  min-height: calc(100vh - 8rem);
   padding: 4rem 0;
   display: grid;
   padding: 1.5rem 0;
@@ -14,6 +14,10 @@
     & h1  {
       color: $dark-blue;
       font-size: 4rem;
+
+      @media screen and (max-width: 600px) {
+        font-size: 2rem
+      }
     }
 
     & .extra {
@@ -24,6 +28,10 @@
   & .body {
     width: 50%;
     margin: auto;
+
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
 
     & p {
       margin: 1rem 0;

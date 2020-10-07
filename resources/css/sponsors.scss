@@ -9,6 +9,11 @@
 
     & h1  {
       font-size: 4rem;
+
+      @media screen and (max-width: 600px) {
+        font-size: 2rem;
+        text-align: center;
+      }
     }
 
     & .extra {
@@ -27,6 +32,10 @@
       margin: auto;
       margin-top: 0;
       padding: 1rem;
+
+      @media screen and (max-width: 600px) {
+        width: 80%;
+      }
 
       & img {
         max-width: 100%;
