@@ -75,6 +75,7 @@
 
 .header nav ul a {
   padding: 0.5rem;
+  margin: 0 1rem;
   font-weight: bold;
   color: #FFFFFF;
   text-decoration: none;
@@ -99,7 +100,7 @@
     display: block;
     font-size: 2rem;
     position: absolute;
-    right: 2rem;
+    right: 0;
     top: -62px;
   }
 }
@@ -438,9 +439,15 @@
 .team-content .players .player-info {
   padding-bottom: 1rem;
   text-align: center;
-  transform: translateY(0);
+  transform: translateY(-60px);
   opacity: 0;
   transition: all 0.15s;
+}
+
+@media screen and (max-width: 600px) {
+  .team-content .players .player-info {
+    transform: translateY(0);
+  }
 }
 
 .team-content .players .player-info h5 {
@@ -458,7 +465,7 @@
 }
 
 .team-content .players .player:hover .player-info {
-  transform: translateY(-60px);
+  transform: translateY(0);
   opacity: 1;
   transition: all 0.15s;
 }
