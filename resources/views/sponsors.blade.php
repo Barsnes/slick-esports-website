@@ -13,19 +13,9 @@
 
   <div class="sponsors-content bg-dark">
     @foreach ($sponsors as $sponsor)
-      <div class="sponsor-single">
-        <img src={{ asset('images/' . $sponsor->image) }} />
-        <div class="sponsor-single-info">
-          <h5>{{ $sponsor->name }}</h5>
-          <p>
-            {!! $sponsor->body !!}
-            <p>Website: <a href={{ $sponsor->url }}>{{ $sponsor->url }}</a></p>
-          </p>
-        </div>
-      </div>
+      <a href={{ $sponsor->url }} target="_blank"><img src={{ asset('images/' . $sponsor->image) }} /></a>
     @endforeach
   </div>
-
 </div>
 
 @endsection

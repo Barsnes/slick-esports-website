@@ -493,37 +493,15 @@
   color: #FFFFFF;
 }
 
-.sponsors-content .sponsor-single {
-  width: 60%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 3rem;
+.sponsors-content a {
+  width: 20%;
   margin: auto;
   margin-top: 0;
+  padding: 1rem;
 }
 
-.sponsors-content .sponsor-single img {
-  max-height: 100px;
-  max-width: 80%;
-  margin: auto;
-}
-
-.sponsors-content .sponsor-single h5 {
-  font-size: 2rem;
-}
-
-.sponsors-content .sponsor-single a {
-  color: #FAB900;
-}
-
-.sponsors-content .sponsor-single:nth-of-type(2n) img {
-  grid-column: 2/3;
-  grid-row: 1/2;
-}
-
-.sponsors-content .sponsor-single:nth-of-type(2n) .sponsor-single-info {
-  grid-column: 1/2;
-  grid-row: 1/2;
+.sponsors-content a img {
+  max-width: 100%;
 }
 
 @font-face {
