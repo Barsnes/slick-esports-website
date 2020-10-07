@@ -5,10 +5,17 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 80px;
 
+  position: relative;
+  z-index: 1000;
+
   &.index {
     background-color: $white;
 
     & a {
+      color: $dark-blue
+    }
+
+    .icon {
       color: $dark-blue
     }
   }
@@ -40,25 +47,63 @@
       margin: 0;
       padding: 0;
 
-      & li {
-        margin-left: 1.5rem;
+      @media screen and (max-width: 600px) {
 
-        & a {
-          padding: .5rem;
-          font-weight: bold;
+        & {
+          display: grid;
+          width: 100vw;
+          position: absolute;
+          left: 0;
+          top: 80px;
+        }
+
+        &.responsive a {
           color: $white;
-          text-decoration: none;
-          font-weight: 600;
+        }
 
-          &:hover {
-            text-decoration: underline;
+        &.responsive a:not(:last-child) {
+          display: block;
+          width: 100%;
+          padding: 1rem 0;
+          background-color: $dark-blue;
+          text-align: center;
+        }
+      }
+
+      & a {
+        padding: .5rem;
+        font-weight: bold;
+        color: $white;
+        text-decoration: none;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.active {
+          text-decoration: underline;
+        }
+
+        @media screen and (max-width: 600px) {
+          & {
+            display: none;
+            padding: 0;
           }
-
-          &.active {
-            text-decoration: underline;
+          &.icon {
+            display: block;
+            font-size: 2rem;
+            position: absolute;
+            right: 2rem;
+            top: -62px;
           }
         }
       }
+    }
+
+    & .icon {
+      display: none;
+      color: $white
     }
   }
 }
@@ -69,12 +114,24 @@
   border-top: 4px solid $yellow;
   padding: 4rem 3rem;
 
+  @media screen and (max-width: 600px) {
+    padding: 1rem 2rem;
+    grid-gap: 1rem:
+  }
+
   &-top {
     max-width: 75%;
     margin: auto;
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     grid-gap: 4rem;
+
+    @media screen and (max-width: 600px) {
+      grid-gap: .5rem;
+      max-width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
 
     & img {
       max-width: 35%;
@@ -86,6 +143,10 @@
       margin-right: 0;
       display: flex;
 
+      @media screen and (max-width: 600px) {
+        margin: auto;
+      }
+
       & a {
         margin-left: 2rem;
       }
@@ -96,6 +157,10 @@
       margin-left: 0;
       display: grid;
       grid-gap: 1rem;
+
+      @media screen and (max-width: 600px) {
+        margin: auto;
+      }
     }
 
     & a {
@@ -114,6 +179,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
 
     & a {
       display: grid;

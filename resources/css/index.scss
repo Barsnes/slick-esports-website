@@ -6,6 +6,12 @@
     font-size: 4rem;
   }
 
+  @media screen and (max-width: 600px) {
+    & h2 {
+      font-size: 2rem;
+    }
+  }
+
   & img {
     max-width: 15px;
   }
@@ -26,6 +32,13 @@
       width: 60%;
     }
 
+    @media screen and (max-width: 600px) {
+      & img {
+        margin-top: 0%;
+        width: 90%;
+      }
+    }
+
     & .index-button {
       position: absolute;
       top: 80%;
@@ -42,7 +55,7 @@
 
   &-news {
     text-align: center;
-    height: calc(100vh - 8rem);
+    min-height: calc(100vh - 8rem);
     padding: 4rem 0;
 
     & .news-content {
@@ -52,6 +65,11 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       grid-gap: 1rem;
+
+      @media screen and (max-width: 600px) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+      }
 
       & img {
         max-width: 100%;
@@ -74,21 +92,50 @@
         &:nth-of-type(5) {
           grid-column: 5 / 7;
         }
+
+        @media screen and (max-width: 600px) {
+          &:nth-of-type(1) {
+            grid-column: 1 / 2;
+          }
+          &:nth-of-type(2) {
+            grid-column: 1 / 2;
+          }
+          &:nth-of-type(3) {
+            grid-column: 1 / 2;
+          }
+          &:nth-of-type(4) {
+            grid-column: 1 / 2;
+          }
+          &:nth-of-type(5) {
+            grid-column: 1 / 2;
+          }
+        }
       }
     }
   }
 
   &-team {
-    height: calc(100vh - 8rem);
+    min-height: calc(100vh - 8rem);
     padding: 4rem 0;
     display: grid;
     grid-gap: 2rem;
     grid-template-rows: 150px auto;
+
+    @media screen and (max-width: 600px) {
+
+      & {
+        grid-template-rows: 100px auto
+      }
+
+      & h2 {
+        font-size: 2rem
+      }
+    }
   }
 
   &-story {
     display: grid;
-    height: calc(100vh - 8rem);
+    min-height: calc(100vh - 8rem);
     padding: 4rem 0;
 
     & .about-section {
@@ -98,6 +145,10 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 2rem;
+
+      @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr
+      }
 
       & img {
         max-width: 100%;
@@ -120,7 +171,7 @@
 
 .team-content {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 100%;
   display: grid;
   margin: auto;
@@ -132,11 +183,27 @@
     display: flex;
     justify-content: center;
 
+    @media screen and (max-width: 600px) {
+      & {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
     & .player {
       width: 20%;
       height: 100%;
       display: grid;
+      grid-template-rows: 3fr 1fr;
       position: relative;
+
+      @media screen and (max-width: 600px) {
+        & {
+          width: 33.333%;
+          height: auto;
+          margin: 0;
+        }
+      }
 
       & img {
         max-width: 100%;
@@ -162,6 +229,12 @@
         & h6 {
           font-family: Poppins
         }
+
+        @media screen and (max-width: 600px) {
+          & {
+            opacity: 1;
+          }
+        }
       }
 
       &:hover .player-info {
@@ -170,12 +243,28 @@
         transition: all .15s;
       }
 
+      @media screen and (max-width: 600px) {
+        &:hover .player-info {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
       &:nth-of-type(1) {
         margin-right: -150px;
         margin-left: 0px;
 
         & img {
           transform: scale(.8);
+        }
+
+        @media screen and (max-width: 600px) {
+          & {
+            margin: 0;
+            & img {
+              transform: scale(1);
+            }
+          }
         }
       }
       &:nth-of-type(2) {
@@ -186,11 +275,29 @@
         & img {
           transform: scale(.9);
         }
+
+        @media screen and (max-width: 600px) {
+          & {
+            margin: 0;
+            & img {
+              transform: scale(1);
+            }
+          }
+        }
       }
       &:nth-of-type(3) {
         margin-right: 0;
         margin-left: 0px;
         z-index: 3;
+
+        @media screen and (max-width: 600px) {
+          & {
+            margin: 0;
+            & img {
+              transform: scale(1);
+            }
+          }
+        }
       }
       &:nth-of-type(4) {
         margin-left: -135px;
@@ -200,6 +307,15 @@
         & img {
           transform: scale(.9);
         }
+
+        @media screen and (max-width: 600px) {
+          & {
+            margin: 0;
+            & img {
+              transform: scale(1);
+            }
+          }
+        }
       }
       &:nth-of-type(5) {
         margin-left: -150px;
@@ -207,6 +323,15 @@
 
         & img {
           transform: scale(.8);
+        }
+
+        @media screen and (max-width: 600px) {
+          & {
+            margin: 0;
+            & img {
+              transform: scale(1);
+            }
+          }
         }
       }
     }
