@@ -94,9 +94,11 @@
           & {
             display: none;
             padding: 0;
+            margin: 0;
           }
           &.icon {
             display: block;
+            margin: 0 1rem;
             font-size: 2rem;
             position: absolute;
             right: 0;
